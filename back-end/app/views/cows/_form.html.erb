@@ -1,0 +1,72 @@
+<%= form_with(model: cow) do |form| %>
+  <% if cow.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(cow.errors.count, "error") %> prohibited this cow from being saved:</h2>
+
+      <ul>
+        <% cow.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :tag, style: "display: block" %>
+    <%= form.number_field :tag %>
+  </div>
+
+  <div>
+    <%= form.label :dob, style: "display: block" %>
+    <%= form.date_field :dob %>
+  </div>
+
+  <div>
+    <%= form.label :dam, style: "display: block" %>
+    <%= form.number_field :dam %>
+  </div>
+
+  <div>
+    <%= form.label :breed, style: "display: block" %>
+    <%= form.text_field :breed %>
+  </div>
+
+  <div>
+    <%= form.label :docility, style: "display: block" %>
+    <%= form.number_field :docility %>
+  </div>
+
+  <div>
+    <%= form.label :aggression, style: "display: block" %>
+    <%= form.number_field :aggression %>
+  </div>
+
+  <div>
+    <%= form.label :fertility, style: "display: block" %>
+    <%= form.number_field :fertility %>
+  </div>
+
+  <div>
+    <%= form.label :calving, style: "display: block" %>
+    <%= form.number_field :calving %>
+  </div>
+
+  <div>
+    <%= form.label :calfquality, style: "display: block" %>
+    <%= form.number_field :calfquality %>
+  </div>
+
+  <div>
+    <%= form.label :milk, style: "display: block" %>
+    <%= form.number_field :milk %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

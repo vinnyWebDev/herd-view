@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tag: 1
+  dob: 2023-11-23
+  dam: 1
+  breed: MyString
+  docility: 1
+  aggression: 1
+  fertility: 1
+  calving: 1
+  calfquality: 1
+  milk: 1
+  user: one
+
+two:
+  tag: 1
+  dob: 2023-11-23
+  dam: 1
+  breed: MyString
+  docility: 1
+  aggression: 1
+  fertility: 1
+  calving: 1
+  calfquality: 1
+  milk: 1
+  user: two
