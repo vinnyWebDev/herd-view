@@ -20,20 +20,25 @@ const UpdateEntry = (props) => {
     const [isToggled, setIsToggled] = useState(false)
 
 
-
     //posts our new data to the back end
     async function handleSubmit(e) {
         e.preventDefault();
 
-        //this is dynamic because of props
+
         let response = await axios.put(`http://localhost:3000/cows/${props.id}`,
             { tag: tag, dob: dob, dam: dam, breed: breed, docility: docility, aggression: aggression, fertility: fertility, milk: milk, calving: calving, calfquality: calfquality, user_id: props.userId },
             { headers: { Accept: "application/json" } }
-        )
-        let data = response.data;
-        window.location.reload();
+        ).then((response) => {
+            let data = response.data;
+            console.log(response.data);
+            window.location.reload();
+        }).catch((error) => {
+            alert("Invalid input, ensure tag values are numeric.")
+        })
+
 
     }
+
 
     return (
         <div>
@@ -42,53 +47,55 @@ const UpdateEntry = (props) => {
                 <Button className="mb-2" onClick={() => setIsToggled(!isToggled)}>Edit</Button>
                 {isToggled &&
                     <div className="container mt-2 border rounded pt-3 mb-5">
+
                         <form className="formContainer" onSubmit={handleSubmit}>
 
 
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Tag</Form.Label>
-                                <Form.Control type="number" placeholder="Enter Tag" onChange={(e) => { setTag(e.target.value) }} />
+                                <input className="form-control" type="text" maxLength={5} placeholder="Enter five digit tag" onChange={(e) => { setTag(e.target.value) }} required />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Date Of Birth</Form.Label>
-                                <Form.Control type="date" placeholder="Enter Tag" onChange={(e) => { setDob(e.target.value) }} />
+                                <input className="form-control" type="date" placeholder="Enter Tag" onChange={(e) => { setDob(e.target.value) }} required />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Dam</Form.Label>
-                                <Form.Control type="number" placeholder="Enter Dam's Tag" onChange={(e) => { setDam(e.target.value) }} />
+                                <Form.Control type="text" maxLength={5} placeholder="Enter Dam's  five digit tag" onChange={(e) => { setDam(e.target.value) }} required />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Breed</Form.Label>
-                                <Form.Control type="text" placeholder="Breed" onChange={(e) => { setBreed(e.target.value) }} />
+                                <Form.Control type="text" placeholder="Breed" onChange={(e) => { setBreed(e.target.value) }} required />
                             </Form.Group>
+
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Docility</Form.Label>
-                                <Form.Control type="text" placeholder="Docility" onChange={(e) => { setDocility(e.target.value) }} />
+                                <input className="form-control" type="number" min="1" max="5" placeholder="Docility 1-5" onChange={(e) => { setDocility(e.target.value) }} required />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Aggression</Form.Label>
-                                <Form.Control type="text" placeholder="Docility" onChange={(e) => { setAggression(e.target.value) }} />
+                                <input className="form-control" type="number" min="1" max="5" placeholder="Aggression 1-5" onChange={(e) => { setAggression(e.target.value) }} required />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Fertility</Form.Label>
-                                <Form.Control type="text" placeholder="Fertility" onChange={(e) => { setFertility(e.target.value) }} />
+                                <input className="form-control" type="number" min="1" max="5" placeholder="Fertility 1-5" onChange={(e) => { setFertility(e.target.value) }} required />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Milk</Form.Label>
-                                <Form.Control type="text" placeholder="Milk" onChange={(e) => { setMilk(e.target.value) }} />
+                                <input className="form-control" type="number" min="1" max="5" placeholder="Milk 1-5" onChange={(e) => { setMilk(e.target.value) }} required />
                             </Form.Group>
 
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Calving</Form.Label>
-                                <Form.Control type="text" placeholder="Calving" onChange={(e) => { setCalving(e.target.value) }} />
+                                <Form.Control type="text" placeholder="Calving 1-5" onChange={(e) => { setCalving(e.target.value) }} required />
                             </Form.Group>
 
 
