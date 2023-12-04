@@ -35,7 +35,11 @@ const ResetPassword = () => {
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Control onChange={(e) => { setEmail(e.target.value) }} className='mb-3' type="email" placeholder='Enter email address'></Form.Control>
+
                         <Button onClick={(e) => handleSubmit(e)}>Submit</Button>
+                        <div className='mt-3'>
+                            <Link className='LinkText' to="/signin">Go to login</Link>
+                        </div>
                     </Form.Group>
                 </Form>
             </div>

@@ -68,6 +68,10 @@ const Signup = () => {
                     </Form.Group>
 
                     <Button onClick={(e) => { handleSignUp(e) }}>Sign Up</Button>
+
+                    <div className='mt-3'>
+                        <Link className='LinkText' to="/signin">Already have an account?</Link>
+                    </div>
                 </Form>
             </div>
         </div>
