@@ -1,7 +1,7 @@
 import React from 'react'
 import { signOut, getAuth } from "firebase/auth"
 
-const Home = () => {
+const SignOut = () => {
     //once again we import getAuth
     const auth = getAuth();
 
@@ -17,10 +17,10 @@ const Home = () => {
 
     return (
         <div>
-            <h1>Home</h1>
+            <h1>SignOut</h1>
             <button onClick={() => { handleSignOut() }}>Sign Out</button>
         </div>
     )
 }
 
-export default Home
+export default SignOut

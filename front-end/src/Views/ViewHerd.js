@@ -63,7 +63,7 @@ const ViewHerd = () => {
     return (
         <div className='container mb-5'>
 
-            <h1 className='text-center'>Herd</h1>
+            <h1 className='text-center'>Herd Overview</h1>
             {/*Create a table component, import it here */}
             {/*The old way won't work because Cow is it's own whole model which isn't nested
             YOu will have to base the mapping off of id*/}

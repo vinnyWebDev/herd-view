@@ -1,5 +1,5 @@
 import './App.css';
-import Home from './Views/Home';
+import SignOut from './Views/SignOut';
 import Signin from './Views/Signin';
 import Signup from './Views/Signup';
 import Navigation from './Components/Navigation';
@@ -16,7 +16,7 @@ function App() {
   //define our routes inside this array of objects
   const router = createBrowserRouter([{
     path: "/",
-    element: <Protected><Home></Home></Protected>
+    element: <Protected><ViewHerd></ViewHerd></Protected>
   },
   {
     path: "/signin",
@@ -30,10 +30,7 @@ function App() {
     path: "resetpassword",
     element: <ResetPassword></ResetPassword>
   },
-  {
-    path: "viewherd",
-    element: <Protected><ViewHerd></ViewHerd></Protected>
-  },
+
   //dynamic routing implemented here as we will be dealing with many unique cow entries
   {
     path: "cowpage/:cowid",
