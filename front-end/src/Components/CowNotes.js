@@ -11,6 +11,9 @@ const CowNotes = (props) => {
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
 
+    const [isToggled, setIsToggled] = useState(false)
+
+
     //notes will have to be pulled from API
     useEffect(() => {
         async function fetchData() {
@@ -41,34 +44,37 @@ const CowNotes = (props) => {
         window.location.reload();
     }
 
-    //delete ntoe
-
 
     return (
-        <div>
-            <h2>Notes</h2>
-            <Form>
-                <Form.Group>
-                    <Form.Label>Title</Form.Label>
-                    <Form.Control type="text" placeholder="Title" onChange={(e) => { setTitle(e.target.value) }} />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Body</Form.Label>
-                    <Form.Control as="textarea" placeholder="Title" onChange={(e) => { setBody(e.target.value) }} />
-                </Form.Group>
-                <Button onClick={handleSubmit} className='my-2'>Add</Button>
-            </Form>
+        <div className='mb-5'>
+            <h3 className='text-center'>Notes</h3>
+
+            <Button className="mb-2" onClick={() => setIsToggled(!isToggled)}>Add Notes</Button>
+            {isToggled &&
+                <Form>
+                    <Form.Group>
+                        <Form.Label>Title</Form.Label>
+                        <Form.Control type="text" placeholder="Title" onChange={(e) => { setTitle(e.target.value) }} />
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Body</Form.Label>
+                        <Form.Control as="textarea" placeholder="Title" onChange={(e) => { setBody(e.target.value) }} />
+                    </Form.Group>
+                    <Button onClick={handleSubmit} className='my-2'>Add</Button>
+                </Form>
+            }
+
             {
                 //pull notes from our api and output to screen
                 notes.map((item) => {
                     //only show notes for given cow
                     if (item.cow_id == props.cowId) {
                         return (
-                            <>
-                                <h3>{item.title}</h3>
+                            <div className='my-3 border rounded p-4'>
+                                <h5>{item.title}</h5>
                                 <p>{item.body}</p>
                                 <DeleteNote id={item.id}></DeleteNote>
-                            </>
+                            </div>
                         )
                     }
                 })

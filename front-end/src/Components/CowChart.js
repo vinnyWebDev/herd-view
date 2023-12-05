@@ -5,9 +5,10 @@ const CowChart = (props) => {
     return (
         <div>
             {/* wont work unless data is wrapped in an array*/}
+
             <BarChart
                 width={500}
-                height={300}
+                height={400}
                 data={[props.data]}
                 margin={{
                     top: 5,

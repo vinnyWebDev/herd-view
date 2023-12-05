@@ -37,7 +37,6 @@ const CowPage = () => {
                     <Algorithm data={cows}></Algorithm>
 
                 </div>
-
                 {/* PUT DATA VISUALISTIONS HERE */}
                 <div className='col'>
                     <CowChart data={cows}></CowChart>
