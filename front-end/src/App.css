@@ -5,6 +5,7 @@
     
 }
 
+/*CSS for footer and header*/
 .Footer{
    margin-top: auto;
    background: linear-gradient(241deg, rgba(251,249,249,1) 0%, rgba(202,237,225,1) 0%, rgba(48,148,155,1) 69%);
@@ -27,6 +28,7 @@
     height: 40px;
 }
 
+/*CSS used on login, sihn up and password reset components*/
 .CredentialsCard{
     border: 2px solid rgb(199, 199, 199);
     min-width: 500px;
@@ -43,6 +45,7 @@
     margin-right: 10px;
 }
 
+/*CSS used in page content and forms*/
 .Content{
     min-height: 100%;
     margin-top: auto;
@@ -58,4 +61,18 @@
     font-size: 30px;
     font-style: underline;
     text-align: center;
+}
+
+.Bold-Text{
+    font-weight: bold;
+}
+
+.Bad-Text{
+    font-weight: bold;
+    color:rgb(255, 0, 0);
+}
+
+.Good-Text{
+    font-weight: bold;
+    color:rgb(40, 190, 53);
 }

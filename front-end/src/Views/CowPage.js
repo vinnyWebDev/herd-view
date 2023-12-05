@@ -30,10 +30,10 @@ const CowPage = () => {
             <div className='row'>
                 <h1 className='text-center mb-4'>Cow Data</h1>
                 <div className='col'>
-                    <h3>Cow Data</h3>
-                    <p>Tag: {cows.tag}</p>
-                    <p>DOB: {cows.dob}</p>
-                    <p>Dam: {cows.dam}</p>
+                    <h3>Basic Data</h3>
+                    <p><span className='Bold-Text'>Tag:</span> {cows.tag}</p>
+                    <p><span className='Bold-Text'>DOB:</span> {cows.dob}</p>
+                    <p><span className='Bold-Text'>Dam:</span> {cows.dam}</p>
                     <Algorithm data={cows}></Algorithm>
 
                 </div>

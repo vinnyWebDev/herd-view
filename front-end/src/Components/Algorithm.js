@@ -62,7 +62,7 @@ const Algorithm = (props) => {
         <div>
             <h4>Breeding Status</h4>
             {
-                isGood ? <p>THus animal has facourable characteristics and is recommeded for breeding</p> : <p>This animal is not recommeded for breeding due to unfavouable characteristics.</p>
+                isGood ? <p className='Good-Text'>This animal has favourable characteristics and is recommeded for breeding</p> : <p className='Bad-Text'>This animal is not recommeded for breeding due to unfavouable characteristics.</p>
             }
         </div>
     )
