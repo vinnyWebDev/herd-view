@@ -20,36 +20,6 @@ const Algorithm = (props) => {
         milk: data.milk,
     }
 
-
-    /**
-     * Group all the above in an object and map it
-     * apply the good/band counter logic accordingly
-     *     const docility = data.docility;
-    const fertility = data.fertility;
-    const easeOfCalving = data.calving;
-    const calfQuality = data.calfquality;
-    const milk = data.milk;
-
-    if (docility < 3) {
-            goodCounter--;
-            badCounter++;
-        } else if (docility >= 3) {
-            goodCounter++;
-            badCounter--;
-        }
-        console.log(goodCounter)
-        console.log(badCounter)
-     */
-
-    /** 
-        console.log(docility);
-        console.log(aggression);
-        console.log(fertility);
-        console.log(easeOfCalving);
-        console.{log(calfQuality);
-        console.log(milk);
-        */
-
     const getBreedingStatus = () => {
         //aggression variable is processed seperately, see below.
         const aggression = data.aggression;
@@ -65,7 +35,7 @@ const Algorithm = (props) => {
         })
 
         /* Aggression is the one variable in which a lower score is preferable.
-        This means it's betetr to process it by itself instead of in the object.values map above
+        This means it's better to process it by itself instead of in the object.values map above
         In future itterations it would be better to replace aggression with a variable like "calmness, in which a higher score is better.
         This would allow for a sollution which is more efficient and reusable" */
         if (aggression < 3) {
@@ -74,8 +44,7 @@ const Algorithm = (props) => {
         else if (aggression >= 3) {
             badCounter++;
         }
-        console.log("good:" + goodCounter);
-        console.log("bad:" + badCounter);
+
         if (goodCounter >= 3) {
             isGood = true;
             console.log("good " + isGood)
@@ -91,9 +60,9 @@ const Algorithm = (props) => {
 
     return (
         <div>
-            <h1>Algorithm Test 1</h1>
+            <h4>Breeding Status</h4>
             {
-                isGood ? <h1>GOOD COW</h1> : <h1>BAD COW</h1>
+                isGood ? <p>THus animal has facourable characteristics and is recommeded for breeding</p> : <p>This animal is not recommeded for breeding due to unfavouable characteristics.</p>
             }
         </div>
     )

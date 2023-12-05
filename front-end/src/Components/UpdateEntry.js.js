@@ -44,7 +44,7 @@ const UpdateEntry = (props) => {
         <div>
             {/*The prop isn't carrying accross */}
             <div className=" mt-5 ">
-                <Button className="mb-2" onClick={() => setIsToggled(!isToggled)}>Edit</Button>
+                <Button className="mb-2" onClick={() => setIsToggled(!isToggled)}>Edit Animal Data</Button>
                 {isToggled &&
                     <div className="container mt-2 border rounded pt-3 mb-5">
 
