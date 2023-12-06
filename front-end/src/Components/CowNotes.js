@@ -51,7 +51,7 @@ const CowNotes = (props) => {
 
             <Button className="mb-2" onClick={() => setIsToggled(!isToggled)}>Add Notes</Button>
             {isToggled &&
-                <Form>
+                <Form className='Card p-3'>
                     <Form.Group>
                         <Form.Label>Title</Form.Label>
                         <Form.Control type="text" placeholder="Title" onChange={(e) => { setTitle(e.target.value) }} />
@@ -70,7 +70,7 @@ const CowNotes = (props) => {
                     //only show notes for given cow
                     if (item.cow_id == props.cowId) {
                         return (
-                            <div className='my-3 border rounded p-4'>
+                            <div className='my-3 rounded p-4 Card'>
                                 <h5>{item.title}</h5>
                                 <p>{item.body}</p>
                                 <DeleteNote id={item.id}></DeleteNote>

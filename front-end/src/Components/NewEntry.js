@@ -46,7 +46,7 @@ const NewEntry = (props) => {
             <div className=" mt-5 ">
                 <Button className="mb-2" onClick={() => setIsToggled(!isToggled)}>New Entry</Button>
                 {isToggled &&
-                    <div className="container mt-2 border rounded pt-3 mb-5">
+                    <div className="container mt-2  rounded pt-3 mb-5 Card">
                         <form className="formContainer" onSubmit={handleSubmit}>
                             <p className='Form-Headers'>Basic Details</p>
 

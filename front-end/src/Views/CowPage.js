@@ -27,25 +27,27 @@ const CowPage = () => {
 
     return (
         <div className='container'>
-            <div className='row'>
-                <h1 className='text-center mb-4'>Cow Data</h1>
+            <h1 className='text-center mb-5'>Cow Data</h1>
+            <div className='row rounded Card p-4 mb-5'>
+
                 <div className='col'>
                     <h3>Basic Data</h3>
                     <p><span className='Bold-Text'>Tag:</span> {cows.tag}</p>
                     <p><span className='Bold-Text'>DOB:</span> {cows.dob}</p>
                     <p><span className='Bold-Text'>Dam:</span> {cows.dam}</p>
                     <Algorithm data={cows}></Algorithm>
-
                 </div>
+
                 {/* PUT DATA VISUALISTIONS HERE */}
                 <div className='col'>
                     <CowChart data={cows}></CowChart>
 
                 </div>
                 <UpdateEntry id={cowId}></UpdateEntry>
-
-                {/* Put the cow notes component here. ID will be passed in as a prop */}
-                <div>
+            </div>
+            {/* Put the cow notes component here. ID will be passed in as a prop */}
+            <div>
+                <div >
                     <CowNotes cowId={cowId}></CowNotes>
                 </div>
             </div>
