@@ -52,7 +52,7 @@ const UpdateEntry = (props) => {
 
 
                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label>Tag</Form.Label>
+                                <Form.Label>Tag Number</Form.Label>
                                 <input className="form-control" type="text" maxLength={5} placeholder="Enter five digit tag" onChange={(e) => { setTag(e.target.value) }} required />
                             </Form.Group>
 
@@ -62,7 +62,7 @@ const UpdateEntry = (props) => {
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label>Dam</Form.Label>
+                                <Form.Label>Dam Tag Number</Form.Label>
                                 <Form.Control type="text" maxLength={5} placeholder="Enter Dam's  five digit tag" onChange={(e) => { setDam(e.target.value) }} required />
                             </Form.Group>
 
@@ -88,16 +88,20 @@ const UpdateEntry = (props) => {
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
-                                <Form.Label>Milk</Form.Label>
+                                <Form.Label>Milk Provision</Form.Label>
                                 <input className="form-control" type="number" min="1" max="5" placeholder="Milk 1-5" onChange={(e) => { setMilk(e.target.value) }} required />
                             </Form.Group>
 
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
-                                <Form.Label>Calving</Form.Label>
+                                <Form.Label>Ease of Calving</Form.Label>
                                 <Form.Control type="text" placeholder="Calving 1-5" onChange={(e) => { setCalving(e.target.value) }} required />
                             </Form.Group>
 
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Label>Calf Quality</Form.Label>
+                                <Form.Control type="text" placeholder="Calf Quality 1-5" onChange={(e) => { setCalfQuality(e.target.value) }} required />
+                            </Form.Group>
 
                             <Button className="mt-2 mb-2" type="submit">Submit</Button>
                         </form>
