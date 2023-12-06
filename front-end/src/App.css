@@ -2,7 +2,8 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color:#f7f7f7;
+    background: linear-gradient(0deg, rgba(226,225,231,0.9444152661064426) 28%, rgba(251,251,251,1) 63%);
+    
 }
 
 /*CSS for footer and header*/

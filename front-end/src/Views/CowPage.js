@@ -34,6 +34,7 @@ const CowPage = () => {
                     <h3>Basic Data</h3>
                     <p><span className='Bold-Text'>Tag:</span> {cows.tag}</p>
                     <p><span className='Bold-Text'>DOB:</span> {cows.dob}</p>
+                    <p><span className='Bold-Text'>Breed:</span> {cows.breed}</p>
                     <p><span className='Bold-Text'>Dam:</span> {cows.dam}</p>
                     <Algorithm data={cows}></Algorithm>
                 </div>

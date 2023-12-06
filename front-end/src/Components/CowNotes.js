@@ -51,7 +51,7 @@ const CowNotes = (props) => {
 
             <Button className="mb-2" onClick={() => setIsToggled(!isToggled)}>Add Notes</Button>
             {isToggled &&
-                <Form className='Card p-3'>
+                <Form className='Card p-3 rounded'>
                     <Form.Group>
                         <Form.Label>Title</Form.Label>
                         <Form.Control type="text" placeholder="Title" onChange={(e) => { setTitle(e.target.value) }} />
